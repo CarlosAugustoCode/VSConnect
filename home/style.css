@@ -5,259 +5,468 @@
 }
 
 :root {
-    /*bloco de notas: config que seráo usadas no decorrer do site*/
-    --azul: #060606;
+    --azul: #060821;
     --rosa: #C12D6D;
-    --font1: 'Righteous', cursive;
-    --font2: 'Titillium Web', sans-serif;
-    --branco: #FFFFFF;
-    --azulC: #0c7faf;
-    --azulCard: #182246;
+    --branco: #ffffff;
+    --azulC: #0C7FAF;
+
+    --font1: 'Titillium Web', sans-serif;
+    --font2: 'Righteous', cursive;
 }
 
 header {
     background-color: var(--azul);
+    height: 80px;
+    display: flex;
+    align-items: center;
+}
+
+.posicionamento{
+    width: 90%; /*Responsividade*/
+    max-width: 1400px; /*Responsividade*/
+    margin: 0 auto;
 }
 
 .posicionamento_header {
-    width: 1400px;
-    margin: 0 auto;
+    /* background-color: blueviolet; */
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 80px;
 }
 
 .posicionamento_header img {
-    /* Neste caso náo precisa criar uma classe para acessar as config das imagens. Basta chamar a class "pai" seguido da Tag "filho"*/
     width: 250px;
 }
 
 header nav {
-    /* Tags nativas náo precisam do . (ponto) no caso do header*/
-    width: 450px;
+    /* background-color: brown; */
     display: flex;
     justify-content: space-between;
-    font-family: var(--font1);
-    font-size: 18px;
+    align-items: center;
+    width: 450px;
 }
 
 header a {
     color: var(--branco);
     text-transform: uppercase;
-    /* Define letras maiusculas */
     text-decoration: none;
-    /* Tira o sublinhado */
+    font-family: var(--font1);
+    font-size: 18px;
+}
+
+.menu_barras {
+    display: none;
+}
+
+.menu_barras svg {
+    fill: var(--branco);
+    height: 50px;
 }
 
 .btn_login {
     border: 3px solid var(--rosa);
-    /* Define a borda do botão com tamanho da borda, cor e tipo da linha */
     padding: 1px 25px;
-    /* Define o espaçamento do botão */
     border-radius: 30%;
-    /* Curvatura da borda */
 }
 
-h1 {
-    position: absolute;
-    left: -999em;
-    /* "em": Unidade de Medida Relativa */
-    width: 1em;
-    /* overflow: hidden; (exclui a barra de rolagem laterial)*/
-}
 
+
+
+h1{
+   width: 1em;
+   position: absolute;
+   left: -999em;
+   overflow: hidden;
+
+   /* display: none;
+   visibility: hidden; */
+}
+/* BANNER */
 .banner {
-    background-image: url(..//img/banner-background.png);
-    /* fundo de tela como imagem */
+    background-image: url("../img/banner-background.png");
     height: calc(100vh - 80px);
-    /*Calcula 100% da visualização do usuário na tela - (menos) a altura do headede 80% */
+    background-size: cover;
     color: var(--branco);
-    /* cor da fonte do texto que está no banner*/
-    font-family: var(--font2);
-    /* tipo da fonte do texto que está no banner*/
+    font-family: var(--font1);
     display: flex;
-    /* alinhamento do texto no banner */
+    justify-content: center;
     align-items: center;
-    /* alinhamento do texto no banner */
 }
 
-.banner-conteudo {
-    /* Config do efeito blur conteúdo do banner */
+.banner_conteudo {
+    height: 400px;
+    width: 650px;
     background: linear-gradient(114.61deg, rgba(255, 255, 255, 0.052) 1.08%, rgba(255, 255, 255, 0.117) 99.26%);
     border: 1px solid rgba(255, 255, 255, 0.8);
     box-shadow: 30px 30px 60px rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(10px);
-    /*Definindo o efeito blur no quadrado*/
     border-radius: 100px;
-    /*Ajustar o tipo da borda do blur*/
     display: flex;
-    /* Alinhamento do texto dentro no quadro blur */
     flex-direction: column;
-    /* Config a direção do conteúdo no blur do banner */
-    text-align: center;
-    /* Alinhar o texto dentro do blur */
-    padding: 50px;
-    /* Espaçamento interno do texto do blur */
-    width: 50%;
-    /*Ajustar quanto de espaço que vai ocupar na tela*/
-    margin: 0% auto;
-    /*Ajustar pra o blur ir para o centro*/
     align-items: center;
 }
 
-.banner_slogan_1 {
-    /*Estilizar o texto VSConnect*/
-    font-size: 60px;
-    font-family: var(--font1);
+.banner_conteudo span {
+    font-family: var(--font2);
+    font-size: 50px;
+    margin: 30px 0;
 }
 
-.banner_slogan_2 {
-    /*Estilizar o texto: Conectando os melhores...*/
+.banner_conteudo p {
+    width: 500px;
     font-size: 24px;
-    margin: 50px;
+    text-align: center;
 }
 
-.banner_slogan_3 {
-    /*Estilizar o texto: Conecte-se e comece...*/
-    font-size: 22px;
+.banner_conteudo .banner_li3 {
+    font-size: 18px;
     text-decoration: underline;
+    margin: 30px 0 45px;
 }
 
 .banner_botoes {
+    width: 500px;
     display: flex;
     justify-content: space-between;
-    width: 75%;
-    margin-top: 50px;
-    
 }
 
-.btn {
-    font-family: var(--font1);
+.banner_botoes a {
     color: var(--branco);
-    text-transform: uppercase;
-    font-size: 18px;
     text-decoration: none;
+    text-transform: uppercase;
+    font-family: var(--font2);
+}
+
+.banner_botoes .btn_dev {
+    background: rgba(255, 255, 255, 0.01);
+    border: 4px solid var(--rosa);
+    box-shadow: 15px 15px 30px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(25px);
+    padding: 8px 25px;
     border-radius: 30%;
 }
 
-.banner_botao_dev {
-    background: rgba(255, 255, 255, 0.01);
-    border: 4px solid var(--rosa);
-    padding: 10px 30px; /*Espaçamento interno*/
-   
+.banner_botoes .btn_cli {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), linear-gradient(92.23deg, #FF398F -25.96%, #17BBFF 126.83%);
+    
+    box-shadow: 15px 15px 30px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(25px);
+
+    padding: 11px 70px;
+    border-radius: 30%;
 }
 
-.banner_botao_cli {
-    background: linear-gradient(92.79deg, rgba(255, 57, 143, 0.55) 0%, rgba(23, 187, 255, 0.45) 100%);
-    padding: 14px 80px;
+
+
+
+
+/* CONEXÂO */
+.desenvolvedores,
+.clientes{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 100px;
 }
 
-.conexao { /* Orientação do quadro azul de texto */
+.conexao{
     background-color: var(--azulC);
     width: 500px;
     height: 120px;
     border: 1px solid var(--branco);
-    font-family: var(--font2);
+    font-family: var(--font1);
+    font-weight: 600;
+    text-align: center;
     font-size: 22px;
     color: var(--branco);
-    text-align: center;
-    font-weight: 600; /*Definir a formatação do texto*/
     border-radius: 30px;
-    padding: 22px 0 ; /*Espaçamento interno do texto em relação as bordas*/
-    position: relative; 
-    top: -60px; /* Mover um elemento (subir) */
-}
-
-.clientes, /* Estilização do pseudo-botão "para clientes" */
-.desenvolvedores /*reaproveitamento de código para configuração da Section "desevolvedores"*/ { 
+    padding: 22px 0;
     position: relative;
+    top: -60px;
+}
+
+.dev_conteudo,
+.clientes_conteudo{
     display: flex;
+    text-transform: uppercase;
+    gap: 100px;
     align-items: center;
-    flex-direction: column;
-    padding-bottom: 100px; /*ao final do conteudo, aplica um espaçamento de 100 pixels p/ cima em realçao ao paralax*/    
 }
 
-.cliente_conteudo img,
-.dev_conteudo img { /* ajustar o tamanho das imagens das duas classes*/
-    width: 500px;
+.dev_conteudo img,
+.clientes_conteudo img{
+    max-width: 500px; /*Responsividade*/
+    width: 50%; /*Responsividade*/
 }
 
-h2 {
+h2{
+    font-family: var(--font2);
+    font-size: 25px;
+    text-transform: uppercase;
+}
+
+.dev_conteudo ul,
+.clientes_conteudo ul{
     font-family: var(--font1);
-    font-size: 30px;
-    text-transform: uppercase;
-}
-
-main li {
-    text-transform: uppercase;
-    font: var(--font2);
-    font-size: 22px;
-    margin: 10px 0;
-}
-
-.clientes_botao {
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), linear-gradient(92.23deg, #FF398F -25.96%, #17BBFF 126.83%);
-    padding: 11px 50px;
-} 
-.cliente_conteudo ul,
-.dev_conteudo ul { /*ajustando o espaçamento das listas nas duas sections*/
+    font-size: 18px;
     margin: 50px 0;
 }
 
-.cliente_conteudo,
-.dev_conteudo { /* Orientação em realação a imagem e a lista*/
-    display: flex;
-    justify-content: space-around;
-    width: 85%;
+.main_btn{
+    box-shadow: 15px 15px 30px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(25px);
+    border-radius: 30%;
+    color: var(--branco);
+    text-decoration: none;
+    font-family: var(--font2);
 }
 
-.paralax {
-    background-image: url(../img/maos_connect.png);
-    height: 300px; /*definir tamanho na tela*/
-    background-position: center;/* estilizar para que o paralax apareça*/
-    background-size: cover; /* faz com que a imagem aumente de tamanho, mas vai cobrir tudo*/
-    background-repeat: no-repeat; /* cobrir todo o espaçamento sem repetir a imagem*/
-    background-attachment: fixed; /* fixar a imagem sem que ela suba junto com o conteúdo durante a navegação*/
+.clientes_conteudo a{
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), linear-gradient(92.23deg, #FF398F -25.96%, #17BBFF 126.83%);
+
+    padding: 11px 50px;
 }
 
-.dev_conteudo a { /* Estilizar o botão */
+
+
+
+
+/* PARALAX */
+.paralax{
+    background-image:
+        url("../img/maos_connect.png");
+    height: 300px;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+
+
+
+
+/* DEVs */
+.desenvolvedores{
+    padding-top: 100px;
+}
+
+.dev_conteudo a{
+    background: linear-gradient(272.99deg, rgba(7, 12, 71, 0.55) 0%, rgba(7, 12, 71, 0.7) 100%);
+
     border: 4px solid var(--rosa);
-    background: linear-gradient(272.99deg, rgba(7, 12, 71, 0.55) 0%, rgba(7, 12, 71, 0.7) 100%); /*preenchimento do pseudo-botão*/
-    padding: 7px /*altura*/ 46px /*largura*/;
+    padding: 7px 46px;
 }
 
-.desenvolvedores {
-    padding-top: 100px; /*ajustando o espaço p/ o texto e a imagem, descendo ambos em relação ao paralax*/
+
+
+
+
+/* SERVIÇOS */
+.servicos{
+    /* display: flex; */
 }
 
-.card { /*Estilização dos cartões azuis*/
-    width: 400px; /*largura*/
-    height: 350px; /*altura*/
-    color: var(--branco); /*cor da fonte*/
-    background-color: var(--azulCard); /*cor do card*/
-    display: flex; /* ajuste do espaçamento dentro do card*/
-    flex-direction: column;/* ajuste para ficar em coluna*/
-    align-items: center;/*centralizar os elementos no card*/
-    justify-content: space-between;
-    font-family: 'Times New Roman', Times, serif;/* ajuste da fonte, que não é a mesma que estão no root*/ 
-    font-style: italic; /*estilo da fonte (italico, negrito e etc)*/
-    padding: 80px /*topo*/ 50px 50px 50px /*laterais e em baixo*/; /* espaçamento interno*/
-    position: relative; /* ajuste da orientação do pino*/
+.servicos h2{
+    text-align: center;
+    margin-bottom: 100px;
 }
 
-.servicos_cards {/* ajuste para ficar um card ao lado do outro*/
+.servicos>div{
     display: flex;
-    width: 100%;/* largura que ele precisa ocupar*/
-    justify-content: space-evenly; /* espaçamento na margem e entre os cards será o mesmo*/
+    justify-content: space-evenly;
+    flex-wrap: wrap;
 }
 
-.servicos {/* ajuste do espaçamento*/
-    padding-bottom: 150px; /* espaçamento para baixo em relação a section anterior*/
+.card{
+    width: 400px;
+    height: 350px;
+    background-color: #182246;
+    color: var(--branco);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    padding: 60px 30px 30px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    box-shadow: 5px 10px 15px #000000;
+    margin: 5px;
 }
-.card img { /*ajuste do pino vermelho*/
+
+.card img{
     position: absolute;
-    top: -30px;
-    width: 120px;
+    top: -40px;
 }
 
+h3{
+    font-size: 26px;
+}
+
+.card p{
+    font-size: 20px;
+    text-align: center;
+}
+
+.card span{
+    font-size: 24px;
+}
+
+
+
+
+
+/* FOOTER */
+footer {
+    background-image: 
+        linear-gradient( #060821a0, #c12d6d30),
+        url("../img/background_footer.png");
+    background-size: cover;
+    color: var(--branco);
+    margin-top: 200px;
+}
+
+.rodape {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.span_dicas {
+    width: 95%;
+    max-width: 860px;
+    height: 300px;
+    background: rgba(255, 255, 255, 0.01);
+    border: 1px solid #FFFFFF;
+    box-shadow: 30px 30px 60px rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(7.5px);
+    border-radius: 60px;
+    top: -35px;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    position: relative;
+}
+
+.span_dicas img {
+    position: absolute;
+    bottom: 25px;
+    left: 70px;
+    width: 40%;
+    max-width: 300px;
+}
+
+.span_dicas_texto {
+    width: 52%;
+    font-family: var(--font1);
+    font-size: 24px;
+    padding-right: 40px;
+}
+
+.span_dicas_texto p {
+    margin-bottom: 30px;
+}
+
+.botao_dicas {
+    padding: 10px 50px;
+    color: var(--azulC);
+    background-color: var(--branco);
+    border-radius: 30%;
+    text-decoration: none;
+    font-family: var(--font2);
+    text-transform: uppercase;
+    font-size: 18px;
+}
+
+.rodape>p {
+    font-family: var(--font1);
+    margin-bottom: 10px;
+}
+
+.rodape_conteudo {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 0;
+}
+
+.rodape_conteudo h2 {
+    font-size: 24px;
+}
+
+.rodape_conteudo>img { /* > pega somente o filho direto da classe rodape_conteudo */
+    width: 40%;
+}
+
+.rodape_conteudo_paginas ul {
+    font-family: var(--font1);
+    font-size: 18px;
+}
+
+.rodape_conteudo_paginas li::marker {
+    color: var(--azulC);
+}
+
+.rodape_conteudo_contatos {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.rodape_conteudo_contatos img {
+    width: 45px;
+    margin: 10px;
+}
+
+.rodape_conteudo_contatos>a {
+    font-family: var(--font1);
+    font-size: 18px;
+    text-decoration: none;
+    color: var(--branco);
+}
+
+@media screen and (max-width: 911px) { /* Media Query: viabiliza a responsividade de acordo com o tamanho da tela */
+    .servicos > div > div:nth-child(2) { /* vai definir os 2 filhos div da classe .servicos e definir pelo comando nth.child() em qual div vai definir, indicando um numero de ordem dela */
+        margin-top: 100px;
+    } 
+}
+
+@media screen and (max-width: 768px) { /* comando que faz com que o menu de barras apareça em telas menores que 768px*/
+    .menu_barras {
+        display: flex;
+    }
+
+        #menu_links { /* comando que faz com que o menu de barras desapareça quando a tela for maior que 768px */
+            /* display: none; */
+            width: 150px;
+            flex-direction: column;
+            position: absolute;
+            right: 0px;
+            top: 80px;
+            z-index: 1;
+            background-color: rgba(0, 0, 0, 0.50);
+            height: 400px;
+            padding-bottom: 50px;
+            box-shadow: -10px 10px 30px 5px rgba(0,0,0,1);
+        }
+
+    header {
+        position: relative;
+    }
+
+}
+
+@media screen and (min-width: 769px) { /* comando para exibir novamente o menu em resoluções maiores que 769px*/
+    #menu_links {
+        display: flex;
+    }
+}
+
+@media screen and (max-width: 700px) { /* comando para ocultar as imagens com resolução menor que 700px*/
+    .dev_conteudo img, .clientes img {
+        display: none;
+    }
+}
